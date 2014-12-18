@@ -1,0 +1,14 @@
+{
+  "name": "html_rpg",
+  "version": "0.0.1",
+  "componentsDirectory": "js/vendor",
+  "authors": [
+    "Joey Kamsteeg <joey_kamsteeg@live.nl>"
+  ],
+  "dependencies": {
+    "phaser":"2.2.1",
+    "jquery":"2.1.2",
+    "requirejs":"2.1.15",
+    "requirejs-text": "2.0.12"
+  }
+}
