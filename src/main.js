@@ -19,9 +19,12 @@
         }
     });
 
-    require([ 'phaser', 'game' ], function( Phaser, Game ){    
+    require([ 'jquery', 'phaser', 'game' ], function( $, Phaser, Game ){  
+        var screenWidth = $(window).width();
+        var screenHeight = $(window).height();
+        
         var game = new Game();
-        game.start();
+        game.start(screenWidth,screenHeight);
     });
 
 }());
