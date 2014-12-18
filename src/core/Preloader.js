@@ -37,9 +37,15 @@ define([
             
             var game = this.game;
             var baseUrl = data.baseUrl;
+            var images = data.assets.images;
+            var sounds = data.assets.sounds;
            
-            $.each( data.assets.images, function(k,v){
+            $.each( images, function(k,v){
                 game.load.image( v.id, baseUrl + v.image );
+            });
+            
+            $.each( sounds, function(k,v){
+                game.load.audio( v.id, [ baseUrl+ v.mp3, baseUrl + v.ogg ] );
             });
         },
         setInfoText: function( text ){

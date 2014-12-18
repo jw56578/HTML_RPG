@@ -27,6 +27,13 @@
                 "id":"image4",
                 "image":"backgrounds/image4.png"
             }
+        ],
+        "sounds":[
+            {
+                "id":"sfx",
+                "mp3":"sounds/m4a1_shoot1.wav",
+                "ogg":"sounds/m4a1_shoot1.ogg"
+            }
         ]
     }
 }
