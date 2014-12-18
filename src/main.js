@@ -9,8 +9,8 @@
     require.config({
         baseUrl: '/src/',        
         paths:{
-            jquery: "/js/vendor/jquery/dist/jquery",
-            phaser: "/js/vendor/phaser/build/phaser",
+            jquery: "/js/vendor/jquery/dist/jquery.min",
+            phaser: "/js/vendor/phaser/build/phaser.min",
             json:'/js/vendor/json2/json2'
         },
         shim:{

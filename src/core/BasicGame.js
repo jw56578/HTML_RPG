@@ -6,22 +6,27 @@
 
 define([
     'phaser',
-    'json'
-], function(){
+    'json',
+    'core/preloader'
+], function(Phaser, JSON, Preloader){
     'use strict';
+    
+    var preloader;
     
     function BasicGame( game ){};
     BasicGame.prototype = {};
     
-    BasicGame.Boot = function( game ){ };
+    BasicGame.Boot = function( game ){ 
+        this.game = game;
+    };
     BasicGame.Boot.prototype = {
         preload: function(){
             this.load.image( 'preloaderBar' , 'assets/preloader/preloader_bar.jpg');
-            this.load.text( 'data', 'src/config/preloader.json' );
+            
+            preloader = new Preloader( this.game );
+            preloader.setConfig( 'src/config/preloader.json' );
         },
         create: function(){
-            console.log( 'boot created' );
-            
             this.state.start( 'Preloader' );
         }
     };
@@ -39,23 +44,9 @@ define([
 
             this.load.setPreloadSprite( this.preloaderBar );        
             
-            var self = this;
-            var data = JSON.parse( this.cache.getText( "data" ) );
-            var baseUrl = data.baseUrl;
-            
-            $.each( data.assets.images, function( k,v ){
-                console.log( v );
-                self.load.image( v.id, baseUrl + v.image );
-            });
-            
-            //this.load.image('bar', 'assets/preloader/preloader_bar.jpg');
-            //this.load.image('logo', 'assets/demo/phaser.png');
-            
-            console.log('preloader preloaded');
+            preloader.loadAssets();
         },
-        create: function(){
-            
-            console.log('preloader created');
+        create: function(){ 
         }
     };
     
