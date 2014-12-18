@@ -14,6 +14,7 @@ define([
         this.game = game;
         this.textInfo = null;
         this.textProgress = null;
+        this.gotError = false;
     };
     
     Preloader.prototype = {
@@ -28,6 +29,7 @@ define([
             this.game.load.onFileComplete.add(this.onFileComplete, this );
             this.game.load.onLoadComplete.add(this.onLoadComplete, this );
             this.game.load.onFileStart.add( this.onFileStart, this );
+            this.game.load.onFileError.add( this.onFileError, this );
             
             var data = this.getConfig();
             if( !data ) return;
@@ -46,21 +48,41 @@ define([
             this.textProgress = text;
         },
         onFileStart: function( progress, id, file ) {
-            if( this.textInfo !== null )
-                this.textInfo.setText( file );
+            if( this.gotError === false ){
+                if( this.textInfo !== null )
+                    this.textInfo.setText( file );
+            }
         },
         onFileComplete: function(){
-            if( this.textProgress !== null )
-                this.textProgress.setText( this.game.load.progress +"%" );
+            if( this.gotError === false ){
+                if( this.textProgress !== null )
+                    this.textProgress.setText( this.game.load.progress +"%" );
+            }
         },
         onLoadComplete: function(){
-            if( this.textProgress !== null )
-                this.textProgress.setText( this.game.load.progress +"%" );
-            
-            if( this.textInfo !== null )
-                this.textInfo.setText( "" );
+            if( this.gotError === false ){
+                if( this.textProgress !== null )
+                    this.textProgress.setText( this.game.load.progress +"%" );
+
+                if( this.textInfo !== null )
+                    this.textInfo.setText( "" );
+            }
             
             this.game.load.removeAll();
+        },
+        onFileError: function(e, obj){
+            this.gotError = true;
+            
+            if( this.textProgress !== null ){
+                this.textProgress.setText("Error");
+                this.textProgress.fill = "#FF0000";
+            }
+            
+            if( this.textInfo !== null ){
+                this.textInfo.setText( "Error loading file: " + obj.url ); 
+                this.textInfo.clearColors();
+                this.textInfo.fill = "#FF0000";
+            }
         }
     };
     
