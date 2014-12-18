@@ -1,0 +1,32 @@
+{
+    "version": "0.0.1",
+    "baseUrl":"/assets/",
+    "assets":{
+        "images":[
+            {
+                "id":"logo",
+                "image":"demo/phaser.png"
+            },
+            {
+                "id":"preloader_bar",
+                "image":"preloader/preloader_bar.jpg"
+            },
+            {
+                "id":"image1",
+                "image":"backgrounds/image.png"
+            },
+            {
+                "id":"image2",
+                "image":"backgrounds/image2.png"
+            },
+            {
+                "id":"image3",
+                "image":"backgrounds/image3.png"
+            },
+            {
+                "id":"image4",
+                "image":"backgrounds/image4.png"
+            }
+        ]
+    }
+}
