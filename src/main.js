@@ -11,19 +11,19 @@
         paths:{
             jquery: "/js/vendor/jquery/dist/jquery",
             phaser: "/js/vendor/phaser/build/phaser",
-            json2:'/js/vendoer/json2/json2.js'
+            json:'/js/vendor/json2/json2'
         },
         shim:{
             'phaser':{
                 exports:'Phaser'
             },
-            'json2':{
+            'json':{
                 exports:'JSON'
             }
         }
     });
 
-    require([ 'jquery', 'phaser', 'game' ], function( $, Phaser, Game ){  
+    require([ 'jquery', 'phaser', 'game', 'json' ], function( $, Phaser, Game, JSON ){  
         var screenWidth = $(window).width();
         var screenHeight = $(window).height();
         
