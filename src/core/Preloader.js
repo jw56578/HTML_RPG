@@ -19,11 +19,12 @@ define([
     
     Preloader.prototype = {
         setConfig: function( file ){
+            this.game.load.onLoadComplete.add( this.onConfigLoaded, this );
             this.game.load.text( 'preloader_config', file );
         },
         getConfig: function(){
-            if( this.game.cache.checkTextKey( 'preloader_config') === false ) return;
-            return JSON.parse( this.game.cache.getText( 'preloader_config') );
+            if( this.game.cache.checkTextKey( 'preloader_config' ) === false ) return;
+            return JSON.parse( this.game.cache.getText( 'preloader_config' ) );
         },
         loadAssets: function(){
             this.game.load.onFileComplete.add(this.onFileComplete, this );
@@ -83,6 +84,11 @@ define([
                 this.textInfo.clearColors();
                 this.textInfo.fill = "#FF0000";
             }
+            
+            this.game.load.removeAll();
+        },
+        onConfigLoaded: function(){
+            this.game.load.removeAll();
         }
     };
     

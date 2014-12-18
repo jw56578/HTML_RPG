@@ -6,8 +6,11 @@
 
 define([
     'phaser',
-    'core/BasicGame'
-], function( Phaser, BasicGame ){
+    'states/Boot',
+    'states/Preload',
+    'states/World',
+    'core/Preloader'
+], function( Phaser, Boot, Preload, World, Preloader ){
     'use strict';
     
     function Game(){ }
@@ -17,8 +20,11 @@ define([
         start: function(screenWidth, screenHeight){            
             this.game = new Phaser.Game(screenWidth,screenHeight, Phaser.AUTO, '');
             
-            this.game.state.add('Boot', BasicGame.Boot );
-            this.game.state.add('Preloader', BasicGame.Preloader );
+            this.game.preloader = new Preloader( this.game );
+            
+            this.game.state.add('Boot', Boot );
+            this.game.state.add('Preload', Preload );
+            this.game.state.add('World', World );
             
             this.game.state.start('Boot');
         }
