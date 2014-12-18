@@ -12,10 +12,10 @@ define([
     function BasicGame( game ){};
     BasicGame.prototype = {};
     
-    BasicGame.Boot = function( game ){};
+    BasicGame.Boot = function( game ){ };
     BasicGame.Boot.prototype = {
         preload: function(){
-            console.log( 'boot preloaded' );
+            this.load.image( 'preloaderBar' , 'assets/preloader/preloader_bar.jpg');
         },
         create: function(){
             console.log( 'boot created' );
@@ -24,9 +24,22 @@ define([
         }
     };
     
-    BasicGame.Preloader = function ( game ){};
+    BasicGame.Preloader = function ( game ){
+        this.preloaderBar = null;
+        this.game = game;
+    };
     BasicGame.Preloader.prototype = {
         preload: function(){
+            this.preloaderBar = this.add.sprite( this.world.centerX, this.world.centerY, 'preloaderBar' );
+            this.preloaderBar.anchor.setTo(0.0,0.5);
+            this.preloaderBar.scale.setTo(1,1);
+            this.preloaderBar.x = this.world.centerX - ( this.preloaderBar.width / 2 );
+
+            this.load.setPreloadSprite( this.preloaderBar );
+            
+            this.load.image('bar', 'assets/preloader/preloader_bar.jpg');
+            this.load.image('logo', 'assets/demo/phaser.png');
+            
             console.log('preloader preloaded');
         },
         create: function(){

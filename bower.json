@@ -9,6 +9,7 @@
     "phaser":"2.2.1",
     "jquery":"2.1.2",
     "requirejs":"2.1.15",
-    "requirejs-text": "2.0.12"
+    "requirejs-text": "2.0.12",
+    "json2":"latest"
   }
 }

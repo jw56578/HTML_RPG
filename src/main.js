@@ -10,11 +10,15 @@
         baseUrl: '/src/',        
         paths:{
             jquery: "/js/vendor/jquery/dist/jquery",
-            phaser: "/js/vendor/phaser/build/phaser"
+            phaser: "/js/vendor/phaser/build/phaser",
+            json2:'/js/vendoer/json2/json2.js'
         },
         shim:{
             'phaser':{
                 exports:'Phaser'
+            },
+            'json2':{
+                exports:'JSON'
             }
         }
     });
