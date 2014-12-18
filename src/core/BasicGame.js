@@ -18,11 +18,12 @@ define([
     
     BasicGame.Boot = function( game ){ 
         this.game = game;
+        this.textInfo = null;
     };
     BasicGame.Boot.prototype = {
         preload: function(){
             this.load.image( 'preloaderBar' , 'assets/preloader/preloader_bar.jpg');
-            
+
             preloader = new Preloader( this.game );
             preloader.setConfig( 'src/config/preloader.json' );
         },
@@ -41,6 +42,24 @@ define([
             this.preloaderBar.anchor.setTo(0.0,0.5);
             this.preloaderBar.scale.setTo(1,1);
             this.preloaderBar.x = this.world.centerX - ( this.preloaderBar.width / 2 );
+            
+            this.preloaderProgressText = this.add.text( this.world.centerX, this.world.centerY,"", {
+                font: "bold 10px Arial",
+                fill: "#FFFFFF",
+                align:"left"
+            });
+            this.preloaderProgressText.anchor.set(0.5,0.5);
+            
+            this.preloaderInfoText = this.add.text( this.world.centerX, this.world.centerY + 20,"", {
+                font: "bold 10px Arial",
+                fill: "#FFFFFF",
+                align:"left"
+            });
+            this.preloaderInfoText.anchor.set(0.5,0.5);
+            
+            
+            preloader.setProgressText( this.preloaderProgressText );
+            preloader.setInfoText( this.preloaderInfoText );
 
             this.load.setPreloadSprite( this.preloaderBar );        
             
