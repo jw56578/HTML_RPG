@@ -15,6 +15,7 @@
         },
         shim:{
             'phaser':{
+                deps: ['json'],
                 exports:'Phaser'
             },
             'json':{
@@ -23,7 +24,7 @@
         }
     });
 
-    require([ 'jquery', 'phaser', 'game', 'json' ], function( $, Phaser, Game, JSON ){  
+    require([ 'jquery', 'phaser', 'game' ], function( $, Phaser, Game ){  
         var screenWidth = $(window).width();
         var screenHeight = $(window).height();
         

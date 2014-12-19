@@ -6,18 +6,18 @@
 
 define([
     'phaser'
-], function (Phaser){
-    function World( game ){ this.game = game; }
+], function ( Phaser ){
+    function GameState( game ){ this.game = game; }
     
-    World.prototype = {
+    GameState.prototype = {
         preload:function(){
             
         },
         create:function(){
-            console.log( 'World' );
+            
         }
     };
     
-    return World;
+    return GameState;
 });
 

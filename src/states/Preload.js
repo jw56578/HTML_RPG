@@ -34,12 +34,14 @@ define([
             this.game.preloader.setProgressText( this.preloaderProgressText );
             this.game.preloader.setInfoText( this.preloaderInfoText );
             this.game.load.setPreloadSprite( this.preloaderBar );
+            
+            this.game.preloader.loadGameConfig();
             this.game.preloader.loadAssets();
         },
         create:function(){
             var self = this;
             setTimeout( function(){
-                self.game.state.start('World');
+                self.game.state.start('GameState');
             },300);
         }
     };

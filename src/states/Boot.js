@@ -14,6 +14,8 @@ define([
     Boot.prototype = {
         preload: function(){
             this.game.preloader.setConfig( 'config/preloader.json' );
+            this.game.preloader.setGameConfig( 'config/game.json' );
+            
             this.game.load.image( 'preloaderBar' , 'assets/preloader/preloader_bar.jpg');
         },
         create: function(){

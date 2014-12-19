@@ -5,12 +5,11 @@
  */
 
 define([
-    'phaser',
     'states/Boot',
     'states/Preload',
-    'states/World',
+    'states/GameState',
     'core/Preloader'
-], function( Phaser, Boot, Preload, World, Preloader ){
+], function( Boot, Preload, GameState, Preloader ){
     'use strict';
     
     function Game(){ }
@@ -24,9 +23,20 @@ define([
             
             this.game.state.add('Boot', Boot );
             this.game.state.add('Preload', Preload );
-            this.game.state.add('World', World );
+            this.game.state.add('GameState', GameState );
             
             this.game.state.start('Boot');
+        },
+        preload: function(){
+            
+        },
+        create: function(){
+            
+        },
+        update: function(){
+        },
+        render: function(){
+            
         }
     };
     

@@ -22,9 +22,19 @@ define([
             this.game.load.onLoadComplete.add( this.onConfigLoaded, this );
             this.game.load.text( 'preloader_config', file );
         },
+        setGameConfig: function( file ){
+            this.game.load.text( 'game_config', file );
+        },
         getConfig: function(){
             if( this.game.cache.checkTextKey( 'preloader_config' ) === false ) return;
             return JSON.parse( this.game.cache.getText( 'preloader_config' ) );
+        },
+        loadGameConfig: function(){
+            if( this.game.cache.checkTextKey('game_config') === false) return;
+            var gameConfig = JSON.parse( this.game.cache.getText('game_config' ) );
+            this.game.gameConfig = gameConfig;
+            
+            console.log( this.game.gameConfig );
         },
         loadAssets: function(){
             this.game.load.onFileComplete.add(this.onFileComplete, this );
