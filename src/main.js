@@ -29,7 +29,7 @@
         var screenHeight = $(window).height();
         
         var game = new Game();
-        game.start(screenWidth,screenHeight);
+        game.start(1280,720);
     });
 
 }());
