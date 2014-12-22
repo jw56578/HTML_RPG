@@ -34,6 +34,9 @@ define([
             this.preloaderProgressText.text = "FPS: " + this.game.time.fps;
             this.preloaderProgressText.text += "\nRefresh Rate: " + this.game.time.elapsedMS;
             this.preloaderProgressText.text += "\nEvents: " + this.game.time.events.events.length;
+            
+            this.preloaderProgressText.x = this.game.camera.x + 10;
+            this.preloaderProgressText.y = this.game.camera.y + 10;
         }
     };
     

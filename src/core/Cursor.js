@@ -19,8 +19,8 @@ define([
             this.sprite.smoothed = false;
         },
         update: function(){
-            this.sprite.x = this.game.input.mousePointer.x;
-            this.sprite.y = this.game.input.mousePointer.y;
+            this.sprite.x = this.game.camera.x + this.game.input.mousePointer.x;
+            this.sprite.y = this.game.camera.y + this.game.input.mousePointer.y;
         },
         changeCursor: function( state ){
             switch( state ){
