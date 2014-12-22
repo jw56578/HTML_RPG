@@ -49,6 +49,7 @@ define([
             var baseUrl = data.baseUrl;
             var images = data.assets.images;
             var sounds = data.assets.sounds;
+            var tilemap = data.tilemap;
            
             $.each( images, function(k,v){
                 game.load.image( v.id, baseUrl + v.image );
@@ -57,6 +58,16 @@ define([
             $.each( sounds, function(k,v){
                 game.load.audio( v.id, [ baseUrl+ v.mp3, baseUrl + v.ogg ] );
             });
+            
+            if( tilemap !== null ){
+                game.load.tilemap( tilemap.id, tilemap.path, null, Phaser.Tilemap.TILED_JSON );
+                
+                var tiles = data.tiles;
+                
+                $.each( tiles, function(k,v){
+                    game.load.image( v.id, baseUrl + v.path );
+                });
+            }
         },
         setInfoText: function( text ){
             this.textInfo = text;

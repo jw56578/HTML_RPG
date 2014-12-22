@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="100" height="100" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="Grasslands_A" tilewidth="16" tileheight="16">
+  <image source="../assets/tilemap/Grasslands_A.png" width="288" height="496"/>
+ </tileset>
+ <tileset firstgid="559" name="Grasslands_B" tilewidth="16" tileheight="16">
+  <image source="../assets/tilemap/Grasslands_B.png" width="256" height="512"/>
+ </tileset>
+ <layer name="Ground" width="100" height="100">
+  <data encoding="base64" compression="zlib">
+   eJztm19u00AQxu28BigcAJBAVTkAoIgjpFco3KlwgEaCwnO5D+UCSH3gib/CK7zKMOzaG++fmZ2dT/qUNC915pdvZr22z7quO6vYLwd/yeiLvusuC3nX09czF49PlfHYCeHxavAW+HSs4+eZOkNe1xMcr4YanSuP5HmJcQkmUnnAvNiswAx8ddQ7pLflZiKVx1RWYmdKzlmyG1+pa1aKx9w8oe5bLebjEDa+LBkmH0enZiOdB1574ZkS4qkelzov0nmEZsbO+iU9LeVMaZGHb/3FYaa0yAOz8TG59nw+N1NiZkvrPIxt/3L1qpj18dUCLspj379wTlKsjw/tZ8pjb9/a2HU+fyiz0H6mPPaemiW+uZK6nymPf537WspcP1Mey3ikmi2urFDXgJOnePjWv66eZXjddNOzx8eFugacPJeP0HlxyLkLNnUNODl0psfyUh7hzjnTQ66FUX9/bj5kfwv2JTvjXRnxzRjNx3I2oXv2N+gVv5/6THnEc4rdI9Z+lY9NDB/Lhfr7SHPsGo36+CV6ydxRHnw4QVMfo1qtVqvVarW6Hp8Pfr3QbxgcvzS/HfxuoS+Jjvmkn/YTBtcQl/7OP1TI42k/7ecMGMX8zmvjcdq7fTzDqCSTlnj4tJ3hYpksnZel+o4UHva4tig3Liala9UyD+ytZ75I41ILD5iZY8FZed/RnKcs4QG5SGYSai48XEyeKY9oHrHHA5mUzMi34f98R/5B8HvgxgMzKZERw+Jo1XW3Rj8aX++syjPhyAMyKZGR9Vj/u4CJ8b3Bt1fKw3pTKCNrkAnLwbz+7pUHFQ+YC8PBvlce//MwPetxRiZrlAvYu0rwSMmgBA/jFxl53B9q/qvf58Jy+Tn8/VB5OHnkzohh8gC5BIuaeLRyfpiTh1UOJsqDnocxnOsS97Rq5ZF7riuPMFPtaSkPvyVlJFf9p3ikZgMzojzoeRhvlAdLHrXPECk8pPQsKTyMJfQsah4pBa9TpbjftIa6cuZhhNe+yoOWB7xnKzYnyiOd8Hk7l2cauJhCeE8+tn9JMpVw/9KM0PKwwvcIUdeD2hy00XnCiofvvmzq2rTKw8jFpMWscBJ8Fgtfy6KuU4s8oFo9T+Es/BxWC1mpQS1lpRa1sgarSS0wqU3SZ0qtct3fRV3LlnkYSWRSu6QxkSBJe/eSlPq+CeURr9r7l0TVfD4vVbXu30sWZlIDF+lyXVPhPFtaUg17LS2K8xqsVXE9h2xdW2Y5UfG6J0/1V/CZIeVBLy4ZUe3FYZb8AWkTIpA=
+  </data>
+ </layer>
+ <layer name="Objects" width="100" height="100" visible="0">
+  <data encoding="base64" compression="zlib">
+   eJzt0TEKwCAQBMAFP26T/EDfJXmRljYpJUVmYOHKZS8BAAAAAAAAAAAAAAAAAAAAAAAAAABIrpLUl9zl63b/09bmY8uz3d0/AAAAAAAAAAAAAAAAAAAAAACOmoZaCkk=
+  </data>
+ </layer>
+ <objectgroup name="Player">
+  <object name="PlayerStart" type="Spawn" x="792" y="798" width="16" height="16"/>
+ </objectgroup>
+</map>

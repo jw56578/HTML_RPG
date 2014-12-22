@@ -22,6 +22,13 @@ define([
             this.cursor = new Cursor( this.game );
         },
         create:function(){   
+            this.map = this.game.add.tilemap("world");
+            this.map.addTilesetImage("Grasslands_A");
+            this.map.addTilesetImage("Grasslands_B");
+            
+            this.layer = this.map.createLayer("Ground");
+            this.layer.resizeWorld();
+            
             this.player.create();         
             this.cursor.create();
             
