@@ -80,6 +80,15 @@
                 "image":"weapon/weapon_16.png"
             }
         ],
+        "spritesheets":[
+            {
+                "id":"warrior",
+                "image":"human/warrior4.png",
+                "width":16,
+                "height":16,
+                "frames":4
+            }
+        ],
         "sounds":[
             {
                 "id":"sfx",

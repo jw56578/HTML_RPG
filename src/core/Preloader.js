@@ -47,12 +47,19 @@ define([
             
             var game = this.game;
             var baseUrl = data.baseUrl;
+            
             var images = data.assets.images;
             var sounds = data.assets.sounds;
+            var spritesheets = data.assets.spritesheets;
+            
             var tilemap = data.tilemap;
            
             $.each( images, function(k,v){
                 game.load.image( v.id, baseUrl + v.image );
+            });
+            
+            $.each( spritesheets, function(k,v){
+               game.load.spritesheet( v.id, baseUrl + v.image, v.width, v.height, v.frames ); 
             });
             
             $.each( sounds, function(k,v){
