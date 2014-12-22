@@ -26,6 +26,22 @@
             {
                 "id":"image4",
                 "image":"backgrounds/image4.png"
+            },
+            {
+                "id":"rpg_enemies",
+                "image":"rpg/roguelikecreatures.png"
+            },
+            {
+                "id":"rpg_items",
+                "image":"rpg/roguelikeitemsx3_1.png"
+            },
+            {
+                "id":"rpg_tiles",
+                "image":"rpg/rogueliketiles.png"
+            },
+            {
+                "id":"rpg_icons",
+                "image":"rpg/rpgicons.png"
             }
         ],
         "sounds":[
