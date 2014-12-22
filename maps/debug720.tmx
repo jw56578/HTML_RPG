@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="80" height="45" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="Grasslands_A" tilewidth="16" tileheight="16">
+  <image source="../assets/tilemap/Grasslands_A.png" width="288" height="496"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="80" height="45">
+  <data encoding="base64" compression="zlib">
+   eJztwzEJAAAMA7Cyu/711sdIIL2kqqqqqqqqqqqqqqqqquqrAwZ8xOE=
+  </data>
+ </layer>
+</map>

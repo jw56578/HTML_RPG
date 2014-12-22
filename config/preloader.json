@@ -90,16 +90,13 @@
     },
     "tilemap":{
         "id":"world",
-        "path":"maps/world.json"
+        "path":"maps/debug720.json",
+        "layer":"Tile Layer 1"
     },
     "tiles":[
         {
             "id":"Grasslands_A",
             "path":"tilemap/Grasslands_A.png"
-        },
-        {
-            "id":"Grasslands_B",
-            "path":"tilemap/Grasslands_B.png"
         }
     ]
 }
