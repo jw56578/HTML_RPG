@@ -18,37 +18,43 @@ define([
     
     GameState.prototype = {
         preload:function(){
-            this.player = new Player( this.game );
-            this.cursor = new Cursor( this.game );
+            this.WorldLayer = this.game.add.group();
+            this.WorldLayer.name = "World Layer";
+            this.WorldLayer.z = 0;
+            
+            this.UILayer = this.game.add.group();
+            this.UILayer.name = "UI Layer";
+            this.UILayer.z = 5;
+            
+            this.player = new Player( this.game, this.WorldLayer );
+            this.cursor = new Cursor( this.game, this.UILayer );
         },
-        create:function(){   
-            this.map = this.game.add.tilemap("world");
-            this.map.addTilesetImage("Grasslands_A");
+        create:function(){ 
+            this.createTilemap();
             
-            this.layer = this.map.createLayer("Tile Layer 1");
-            this.layer.scale.set(1);
-            this.layer.smoothed = false;
-            this.layer.resizeWorld();
-            
-            this.game.camera.x = 0;
-            this.game.camera.y = 0;
-            this.game.camera.zoom = 2;
-
-            this.player.create();         
             this.cursor.create();
+            this.player.create();
             
             if( this.game.gameConfig.env ){
                 this.fpsCounter = new FPSCounter( this.game );
                 this.fpsCounter.preload();
             }
         },
-        update: function(){
+        update: function(){            
             this.cursor.update();
-            
             this.player.update();
             
             if( this.fpsCounter !== null )
                 this.fpsCounter.update();
+        },
+        createTilemap: function(){
+            this.map = this.game.add.tilemap("world");
+            this.map.addTilesetImage("Grasslands_A");
+            
+            this.layer = this.map.createLayer("Tile Layer 1");
+            this.layer.smoothed = false;
+            
+            this.WorldLayer.add( this.layer );
         }
     };
     

@@ -9,17 +9,21 @@ define([
 ], function(  Phaser ){
     'use strict';
     
-    function Player( game ){
+    function Player( game, layer ){
         this.game = game;
+        this.layer = layer;
+        
         this.x = 632;
         this.y = 354;
         this.sprite = null;
     }
     
     Player.prototype = {
-        create: function(){
+        create: function(){            
             this.sprite = this.game.add.sprite(this.x, this.y,'warrior');
             this.sprite.anchor.set(0.5,0.5);
+            
+            this.layer.add( this.sprite );
         },
         update: function(){
             this.sprite.x = this.x;
