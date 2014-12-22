@@ -6,9 +6,10 @@
 
 define([
     'phaser',
+    'core/Cursor',
     'core/FPSCounter',
     'game/Player'
-], function ( Phaser, FPSCounter, Player ){
+], function ( Phaser, Cursor, FPSCounter, Player ){
     'use strict';
     
     function GameState( game ){ 
@@ -18,9 +19,11 @@ define([
     GameState.prototype = {
         preload:function(){
             this.player = new Player( this.game );
+            this.cursor = new Cursor( this.game );
         },
         create:function(){   
-            this.player.create();
+            this.player.create();         
+            this.cursor.create();
             
             if( this.game.gameConfig.env ){
                 this.fpsCounter = new FPSCounter( this.game );
@@ -28,10 +31,12 @@ define([
             }
         },
         update: function(){
-            if( this.fpsCounter !== null )
-                this.fpsCounter.update();
+            this.cursor.update();
             
             this.player.update();
+            
+            if( this.fpsCounter !== null )
+                this.fpsCounter.update();
         }
     };
     
