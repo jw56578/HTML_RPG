@@ -21,6 +21,20 @@ define([
         update: function(){
             this.sprite.x = this.game.input.mousePointer.x;
             this.sprite.y = this.game.input.mousePointer.y;
+        },
+        changeCursor: function( state ){
+            switch( state ){
+                case 'normal':
+                    this.sprite.loadTexture('cursor');
+                    break;
+                
+                case 'hover':
+                    this.sprite.loadTexture('weapon_01');
+                    break;
+                    
+                default:
+                    this.sprite.loadTexture('cursor');
+            }
         }
     };
     
