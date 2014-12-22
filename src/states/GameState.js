@@ -24,15 +24,14 @@ define([
         create:function(){   
             this.map = this.game.add.tilemap("world");
             this.map.addTilesetImage("Grasslands_A");
-            this.map.addTilesetImage("Grasslands_B");
             
-            this.layer = this.map.createLayer("Ground");
-            this.layer.scale.set(2);
+            this.layer = this.map.createLayer("Tile Layer 1");
+            this.layer.scale.set(1);
             this.layer.smoothed = false;
             this.layer.resizeWorld();
             
-            this.game.camera.x = 620;
-            this.game.camera.y = 620;
+            this.game.camera.x = 0;
+            this.game.camera.y = 0;
             this.game.camera.zoom = 2;
 
             this.player.create();         

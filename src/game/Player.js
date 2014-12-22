@@ -11,20 +11,19 @@ define([
     
     function Player( game ){
         this.game = game;
-        this.x = 0;
-        this.y = 0;
+        this.x = 632;
+        this.y = 354;
         this.sprite = null;
     }
     
     Player.prototype = {
         create: function(){
-            this.sprite = this.game.add.sprite(this.x, this.y, 'logo');
+            this.sprite = this.game.add.sprite(this.x, this.y,'warrior');
+            this.sprite.anchor.set(0.5,0.5);
         },
         update: function(){
             this.sprite.x = this.x;
             this.sprite.y = this.y;
-
-            this.x = ( this.x < this.game.world.bounds.width ) ? this.x + 2 : 0;
         }
     };
     
