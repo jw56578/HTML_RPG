@@ -12,36 +12,72 @@
                 "image":"preloader/preloader_bar.jpg"
             },
             {
-                "id":"image1",
-                "image":"backgrounds/image.png"
+                "id":"cursor",
+                "image":"weapon/weapon_14.png"
             },
             {
-                "id":"image2",
-                "image":"backgrounds/image2.png"
+                "id":"weapon_01",
+                "image":"weapon/weapon_01.png"
             },
             {
-                "id":"image3",
-                "image":"backgrounds/image3.png"
+                "id":"weapon_02",
+                "image":"weapon/weapon_02.png"
             },
             {
-                "id":"image4",
-                "image":"backgrounds/image4.png"
+                "id":"weapon_03",
+                "image":"weapon/weapon_03.png"
             },
             {
-                "id":"rpg_enemies",
-                "image":"rpg/roguelikecreatures.png"
+                "id":"weapon_04",
+                "image":"weapon/weapon_04.png"
             },
             {
-                "id":"rpg_items",
-                "image":"rpg/roguelikeitemsx3_1.png"
+                "id":"weapon_05",
+                "image":"weapon/weapon_05.png"
             },
             {
-                "id":"rpg_tiles",
-                "image":"rpg/rogueliketiles.png"
+                "id":"weapon_06",
+                "image":"weapon/weapon_06.png"
             },
             {
-                "id":"rpg_icons",
-                "image":"rpg/rpgicons.png"
+                "id":"weapon_07",
+                "image":"weapon/weapon_07.png"
+            },
+            {
+                "id":"weapon_08",
+                "image":"weapon/weapon_08.png"
+            },
+            {
+                "id":"weapon_09",
+                "image":"weapon/weapon_09.png"
+            },
+            {
+                "id":"weapon_10",
+                "image":"weapon/weapon_10.png"
+            },
+            {
+                "id":"weapon_11",
+                "image":"weapon/weapon_11.png"
+            },
+            {
+                "id":"weapon_12",
+                "image":"weapon/weapon_12.png"
+            },
+            {
+                "id":"weapon_13",
+                "image":"weapon/weapon_13.png"
+            },
+            {
+                "id":"weapon_14",
+                "image":"weapon/weapon_14.png"
+            },
+            {
+                "id":"weapon_15",
+                "image":"weapon/weapon_15.png"
+            },
+            {
+                "id":"weapon_16",
+                "image":"weapon/weapon_16.png"
             }
         ],
         "sounds":[
