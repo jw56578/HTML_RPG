@@ -6,8 +6,9 @@
 
 define([
     'phaser',
-    'core/FPSCounter'
-], function ( Phaser, FPSCounter ){
+    'core/FPSCounter',
+    'game/Player'
+], function ( Phaser, FPSCounter, Player ){
     'use strict';
     
     function GameState( game ){ 
@@ -16,11 +17,12 @@ define([
     
     GameState.prototype = {
         preload:function(){
-            
+            this.player = new Player( this.game );
         },
-        create:function(){               
+        create:function(){   
+            this.player.create();
+            
             if( this.game.gameConfig.env ){
-                console.log( "Development Mode" );
                 this.fpsCounter = new FPSCounter( this.game );
                 this.fpsCounter.preload();
             }
@@ -28,6 +30,8 @@ define([
         update: function(){
             if( this.fpsCounter !== null )
                 this.fpsCounter.update();
+            
+            this.player.update();
         }
     };
     
