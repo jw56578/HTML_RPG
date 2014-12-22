@@ -27,8 +27,10 @@ define([
             this.map.addTilesetImage("Grasslands_B");
             
             this.layer = this.map.createLayer("Ground");
+            this.layer.scale.set(1);
+            this.layer.smoothed = false;
             this.layer.resizeWorld();
-            
+
             this.player.create();         
             this.cursor.create();
             
