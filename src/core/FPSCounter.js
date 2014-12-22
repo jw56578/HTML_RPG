@@ -32,6 +32,8 @@ define([
         },
         update: function(){
             this.preloaderProgressText.text = "FPS: " + this.game.time.fps;
+            this.preloaderProgressText.text += "\nRefresh Rate: " + this.game.time.elapsedMS;
+            this.preloaderProgressText.text += "\nEvents: " + this.game.time.events.events.length;
         }
     };
     
